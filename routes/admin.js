@@ -9,7 +9,7 @@ import {
 	getEditProduct,
 	postEditProduct,
 	postDeleteProduct,
-} from '../controllers/admin';
+} from '../controllers/admin.js';
 
 const router = Router();
 

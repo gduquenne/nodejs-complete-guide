@@ -1,4 +1,4 @@
-import User from '../models/user';
+import User from '../models/user.js';
 
 export function getLogin(req, res, next) {
 	res.render('auth/login', {

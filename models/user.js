@@ -1,8 +1,6 @@
-import { Schema as _Schema, model } from 'mongoose';
+import mongoose from 'mongoose';
 
-const Schema = _Schema;
-
-const userSchema = new Schema({
+const userSchema = new mongoose.Schema({
 	name: {
 		type: String,
 		required: true,
@@ -15,7 +13,7 @@ const userSchema = new Schema({
 		items: [
 			{
 				productId: {
-					type: Schema.Types.ObjectId,
+					type: mongoose.Schema.Types.ObjectId,
 					ref: 'Product',
 					required: true,
 				},
@@ -61,7 +59,7 @@ userSchema.methods.clearCart = function () {
 	return this.save();
 };
 
-export default model('User', userSchema);
+export default new mongoose.model('User', userSchema);
 
 // const mongodb = require('mongodb');
 // const getDb = require('../util/database').getDb;
@@ -189,5 +187,11 @@ export default model('User', userSchema);
 //       });
 //   }
 // }
+
+export const findById = () => undefined;
+export const findOne = () =>
+	new Promise((resolve, reject) => {
+		reject('error');
+	});
 
 // module.exports = User;

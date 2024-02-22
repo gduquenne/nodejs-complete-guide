@@ -1,8 +1,6 @@
-import { Schema as _Schema, model } from 'mongoose';
+import mongoose from 'mongoose';
 
-const Schema = _Schema;
-
-const productSchema = new Schema({
+const productSchema = new mongoose.Schema({
 	title: {
 		type: String,
 		required: true,
@@ -20,13 +18,13 @@ const productSchema = new Schema({
 		required: true,
 	},
 	userId: {
-		type: Schema.Types.ObjectId,
+		type: mongoose.Schema.Types.ObjectId,
 		ref: 'User',
 		required: true,
 	},
 });
 
-export default model('Product', productSchema);
+export default new mongoose.model('Product', productSchema);
 
 // const mongodb = require('mongodb');
 // const getDb = require('../util/database').getDb;

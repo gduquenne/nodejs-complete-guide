@@ -11,7 +11,7 @@ import {
 	postCartDeleteProduct,
 	postOrder,
 	getOrders,
-} from '../controllers/shop';
+} from '../controllers/shop.js';
 
 const router = Router();
 

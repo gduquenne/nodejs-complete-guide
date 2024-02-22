@@ -6,7 +6,7 @@ import {
 	postLogin,
 	postSignup,
 	postLogout,
-} from '../controllers/auth';
+} from '../controllers/auth.js';
 
 const router = Router();
 
